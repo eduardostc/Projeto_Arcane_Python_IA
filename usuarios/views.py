@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse, Http404
 from django.contrib.auth.models import User
 from django.contrib.messages import constants
 from django.contrib import messages
@@ -35,3 +36,29 @@ def cadastro(request):
         )
 
         return redirect('login')
+
+from django.contrib.auth import authenticate
+from django.contrib import auth
+
+def login(request):
+    if request.method == 'GET':
+        return render (request, 'login.html')
+    elif request.method == 'POST':
+        username = request.POST.get('username')
+        senha = request.POST.get('senha')
+
+        user = authenticate(request, username=username, password=senha)
+
+        if user:
+            auth.login(request, user)
+            return redirect('treinar_ia')
+        messages.add_message(request, constants.ERROR, 'Username ou senha invalidos!')
+        return redirect('login')
+
+
+def permissoes(request):
+    if not request.user.is_superuser:
+        raise Http404()
+    users = User.objects.filter(is_superuser=False)
+    return render(request, 'permissoes.html', {'users':users})
+#16 min
