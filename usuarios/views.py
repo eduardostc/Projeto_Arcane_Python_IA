@@ -61,4 +61,10 @@ def permissoes(request):
         raise Http404()
     users = User.objects.filter(is_superuser=False)
     return render(request, 'permissoes.html', {'users':users})
-#16 min
+
+from rolepermissions.roles import assign_role
+
+def tornar_gerente(request, id):
+    user = User.objects.get(id=id)
+    assign_role(user, 'gerente')
+    return redirect('permissoes')
