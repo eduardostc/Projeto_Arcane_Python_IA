@@ -26,9 +26,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    'django_q',
     'rolepermissions',
-    
+
     'usuarios',
+    'oraculo',
     
 ]
 
@@ -131,5 +133,24 @@ MESSAGE_TAGS = {
     constants.ERROR: 'bg-red-50 text-red-700'
 }
 
+from decouple import config
+OPENAI_API_KEY = config('OPENAI_API_KEY')
+#OPENAI_API_KEY = config('OPENAI_API_KEY', default=None)
+
+Q_CLUSTER = {
+    "name": "pythonando",
+    "workers": 1,
+    "retry": 120,
+    "queue_limit": 50,
+    "orm": "default",
+}
+
 ####################### LINK DA DOCUMENTAÇÃO ############################################
 #https://grizzly-amaranthus-f6a.notion.site/Arcane-Workshop-de-programa-o-web-IA-2076cf8ea89f80f09efacfdafa8a7af0
+
+# Dia 1, Parte 7 Aula permissao com Django
+# https://www.youtube.com/watch?v=vkkacDJ87yc&list=PLD1fkq-5j7iiHIoYT1UFY99eqIfE6qxwz&index=8
+# 18 min
+
+# subst P: "D:\Meus Documentos\Cursos\2025\Projetos CAIO e outros de python\Caio Arcane - Programacao web com IA\django"
+# p:
