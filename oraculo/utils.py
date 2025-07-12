@@ -34,6 +34,8 @@ def gerar_documentos(instance):
     if extensao == 'pdf':
       loader = PyPDFLoader(instance.documento.path)
       pdf_doc = loader.load()
+      for doc in pdf_doc:
+         doc.metadata['url'] = instance.documento.url
       documentos += pdf_doc
   
   if instance.conteudo:

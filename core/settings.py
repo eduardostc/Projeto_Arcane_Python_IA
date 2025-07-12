@@ -148,9 +148,9 @@ Q_CLUSTER = {
 ####################### LINK DA DOCUMENTAÇÃO ############################################
 #https://grizzly-amaranthus-f6a.notion.site/Arcane-Workshop-de-programa-o-web-IA-2076cf8ea89f80f09efacfdafa8a7af0
 
-# Dia 1, Parte 7 Aula permissao com Django
-# https://www.youtube.com/watch?v=vkkacDJ87yc&list=PLD1fkq-5j7iiHIoYT1UFY99eqIfE6qxwz&index=8
-# 18 min
+# Dia 2, Parte 2 Aula Pratica de Funcionalidade com IA Periodo da tarde
+# https://www.youtube.com/watch?v=NxWBXrgDzB4&list=PLD1fkq-5j7iiHIoYT1UFY99eqIfE6qxwz&index=11
+# 38 min
 
 # subst P: "D:\Meus Documentos\Cursos\2025\Projetos CAIO e outros de python\Caio Arcane - Programacao web com IA\django"
 # p:
